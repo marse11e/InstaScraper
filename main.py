@@ -18,9 +18,9 @@ L = instaloader.Instaloader()
 # Optionally, login or load session (1 вариант входа)
 # L.interactive_login(USER)  # Ввести пароль вручную
 # Загрузить сессию, созданную с `instaloader -l USERNAME`
-L.load_session_from_file(
-    USER, filename='session-file/session-marselle_naz'
-)
+# L.load_session_from_file(
+#     USER, filename='session-file/session-marselle_naz'
+# )
 
 
 # Login and save session (2 вариант входа)
@@ -136,7 +136,7 @@ def get_profile_posts(profile: Profile) -> None:
             comments = post.get_comments()
 
         except:
-            print('Не удалось получить комментарии (Не авторизованы.)')
+            post_info['info_comments'].append({'error-auth': 'Не удалось получить комментарии (Не авторизованы.)'})
 
         else:
             for comment in comments:
@@ -162,7 +162,7 @@ def main():
     username = 'makanofffaa_' # < Тут пишете имя пользователя инстаграм
     profile = instaloader.Profile.from_username(L.context, username)
     # print(information_profile(profile))
-    # print(get_profile_posts(profile))
+    print(get_profile_posts(profile))
 
 
 if __name__ == '__main__':
