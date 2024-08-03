@@ -16,16 +16,15 @@ from settings import USER, PASSWORD
 L = instaloader.Instaloader()
 
 # Optionally, login or load session (1 вариант входа)
-L.interactive_login(USER)  # Ввести пароль вручную
+# L.interactive_login(USER)  # Ввести пароль вручную
 # Загрузить сессию, созданную с `instaloader -l USERNAME`
 # L.load_session_from_file(
 #     USER, filename='session-file/session-marselle_naz'
 # )
 
-
 # Login and save session (2 вариант входа)
-# L.login(USER, PASSWORD)  # Ввести логин и пароль
-# L.save_session_to_file(filename='session-file/')  # Сохранить сессию в файл
+L.login(USER, PASSWORD)  # Ввести логин и пароль
+L.save_session_to_file(filename='session-file/')  # Сохранить сессию в файл
 
 
 def create_directory(path):
@@ -161,7 +160,7 @@ def get_profile_posts(profile: Profile) -> None:
 def main():
     username = '_karina_sarisunova' # < Тут пишете имя пользователя инстаграм
     profile = instaloader.Profile.from_username(L.context, username)
-    # print(information_profile(profile))
+    print(information_profile(profile))
     # print(get_profile_posts(profile))
 
 
