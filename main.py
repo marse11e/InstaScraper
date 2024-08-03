@@ -162,7 +162,7 @@ def main():
     username = '_karina_sarisunova' # < Тут пишете имя пользователя инстаграм
     profile = instaloader.Profile.from_username(L.context, username)
     # print(information_profile(profile))
-    print(get_profile_posts(profile))
+    # print(get_profile_posts(profile))
 
 
 if __name__ == '__main__':
